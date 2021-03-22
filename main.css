@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .emoji-container {
@@ -12,6 +13,7 @@
     background-color: #fafafa;
     justify-content: space-evenly;
     border-radius: 20px;
+    padding: 24px 0;
     box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -21,24 +23,26 @@
     background: transparent;
 }
 
-.emoji-container .emoji-rating {
-    padding: 20px 24px;
+.emoji-container .emoji-wrapper {
     cursor: pointer;
     position: relative;
     transition: .3s;
+    width: 20%;
 }
 
-.emoji-container .emoji-rating div {
+.emoji-container .emoji-wrapper .emoji {
     transition: .3s;
+    width: 100%;
 }
 
-.emoji-container .emoji-rating img {
-    width: 60px;
+.emoji-container .emoji-wrapper img {
+    width: 100%;
     display: block;
     margin: 0 auto ;
+    padding: 8px 40px;
 }
 
-.emoji-container .emoji-rating input {
+.emoji-container .emoji-wrapper input {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -48,29 +52,43 @@
     transition: .3s;
 }
 
-.emoji-container .emoji-rating label {
+.emoji-container .emoji-wrapper label {
     display: block;
     text-align: center;
     margin: auto;
     padding-top: 8px;
 }
 
-.emoji-container .emoji-rating:hover input:checked,
-.emoji-container .emoji-rating:hover input:checked + div {
+.emoji-container .emoji-wrapper:hover input:checked,
+.emoji-container .emoji-wrapper:hover input:checked + .emoji {
     transform: translateY(0px) scale(1);
 }
 
-.emoji-container .emoji-rating:hover,
-.emoji-container .emoji-rating input:checked,
-.emoji-container .emoji-rating input:checked + div {
+.emoji-container .emoji-wrapper:hover,
+.emoji-container .emoji-wrapper input:checked,
+.emoji-container .emoji-wrapper input:checked + .emoji {
     transform: translateY(-30px) scale(1.2);
 }
 
-@media (max-width: 767.98px) {
-    .emoji-container {
-        justify-content: flex-start;
+@media (max-width: 1199.98px) {
+
+    .emoji-container .emoji-wrapper img {
+        padding: 8px 32px;
     }
-    .emoji-container .emoji-rating img {
-        width: 50px;
+
+}
+
+@media (max-width: 991.98px) {
+
+    .emoji-container .emoji-wrapper img {
+        padding: 8px 24px;
+    }
+
+}
+
+@media (max-width: 767.98px) {
+
+    .emoji-container .emoji-wrapper img {
+        padding: 8px;
     }
 }
